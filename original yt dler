@@ -1,0 +1,15 @@
+from pytube import YouTube
+
+yt_link = input("yt link: ")
+
+# YouTube video URL
+video_url = yt_link
+
+# Initialize YouTube object
+yt = YouTube(video_url)
+
+# Get the audio stream
+audio_stream = yt.streams.filter(only_audio=True).first()
+
+# Download the audio
+audio_stream.download(output_path="/storage/emulated/0/Music/YouTube")
